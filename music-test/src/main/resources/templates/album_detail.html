@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${album.title}">Album</title>
+</head>
+<body>
+    <h1 th:text="${album.title}">Album Title</h1>
+    <p>Artist: <span th:text="${album.artist}">Artist</span></p>
+    <p>Release Date: <span th:text="${album.releaseDate}">2020-01-01</span></p>
+
+    <h2>Tracks</h2>
+    <ul>
+        <li th:each="m : ${album.musics}" th:text="${m.title}">Track</li>
+    </ul>
+
+    <p><a th:href="@{/albums}">Back to albums</a></p>
+</body>
+</html>
